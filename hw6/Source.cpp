@@ -25,8 +25,7 @@ void Menu() {
 	int choicetemp = 0;
 	Matrix FirstM;
 	Matrix SecondM;
-	Matrix Resultplus;
-	Matrix ResultMulti;
+	Matrix Result;
 
 
 	while (!done) {
@@ -47,29 +46,15 @@ void Menu() {
 			load(SecondM,choice);
 			break;
 		case 3:
-			ResultMulti = FirstM * SecondM;
-			FirstM.Show();
-			SecondM.Show();
-			ResultMulti.Show();
-			choicetemp = choice;
+			Result = FirstM * SecondM;
 			break;
 		case 4:
-			Resultplus = FirstM + SecondM;
-			FirstM.Show();
-			SecondM.Show();
-			Resultplus.Show();
-			choicetemp = choice;
+			Result = FirstM + SecondM;
 			break;
 		case 5:
 			FirstM.Show();
 			SecondM.Show();
-			if (choicetemp == 3) {
-			
-				ResultMulti.Show();
-			}
-			else if (choicetemp == 4) {
-				Resultplus.Show();
-			}
+			Result.Show();
 			break;
 		case 6:
 			done = true;

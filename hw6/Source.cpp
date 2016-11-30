@@ -1,3 +1,14 @@
+//UTD Fall 2016
+//CS 5303
+//instructor: Dr. Becker
+//Homework #6
+
+//cohort list:
+//Qi Guo
+//Chongliang He
+//Pengfei Li
+//Ying Yi
+
 #include"Matrix.h"
 #include<iostream>
 #include<fstream>
@@ -11,9 +22,11 @@ void load(Matrix&,int);
 void Menu() {
 	bool done = false;
 	int choice = 0;
+	int choicetemp = 0;
 	Matrix FirstM;
 	Matrix SecondM;
-	Matrix ResultM;
+	Matrix Resultplus;
+	Matrix ResultMulti;
 
 
 	while (!done) {
@@ -34,17 +47,29 @@ void Menu() {
 			load(SecondM,choice);
 			break;
 		case 3:
-			ResultM = FirstM * SecondM;
-			ResultM.Show();
+			ResultMulti = FirstM * SecondM;
+			FirstM.Show();
+			SecondM.Show();
+			ResultMulti.Show();
+			choicetemp = choice;
 			break;
 		case 4:
-			ResultM = FirstM + SecondM;
-			ResultM.Show();
+			Resultplus = FirstM + SecondM;
+			FirstM.Show();
+			SecondM.Show();
+			Resultplus.Show();
+			choicetemp = choice;
 			break;
 		case 5:
 			FirstM.Show();
 			SecondM.Show();
-			ResultM.Show();
+			if (choicetemp == 3) {
+			
+				ResultMulti.Show();
+			}
+			else if (choicetemp == 4) {
+				Resultplus.Show();
+			}
 			break;
 		case 6:
 			done = true;

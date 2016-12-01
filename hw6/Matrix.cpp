@@ -1,5 +1,6 @@
 #include<iostream>
 #include"Matrix.h"
+#include<iomanip>
 using namespace std;
 Matrix::Matrix() {
 	for (int i = 0; i < 3; i++) 
@@ -30,9 +31,15 @@ Matrix Matrix::operator*(Matrix other) {
 void Matrix::Show() {
 	for (int i = 0; i < 3; i++)
 		for (int j = 0; j < 3; j++) {
-			if (j == 0) cout << "|"<<"\t";
-			cout << data[i][j]<<"\t";
-			if (j == 2)cout << "|"<<"\n";
+			if (j == 0) { 
+				cout << "|";
+				cout <<setw(4)<< data[i][j]<<"\t"; }
+			else if (j == 2) {
+				cout << setw(4) << data[i][j];
+				cout << "|" << "\n";
+			}
+			else 
+				cout << setw(4) << data[i][j] << "\t";
 		}
 	cout << "\n";
 }
